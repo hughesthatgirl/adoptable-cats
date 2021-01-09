@@ -7,9 +7,11 @@ Sometimes Cat, Sometimes Dog
 Lover of animals search random image. Save option for possible matches
 
 # User Story
+<p?>
 AS 		a person who loves cat and dogs
 I WANT 		to see pictures of cats and dog
 SO 		I can be happy and adopt an animal
+</p>
 
 
 
@@ -18,10 +20,11 @@ WIREFRAME - SCREEN				WIREFRAME – MOBILE
  	      
 
 # APIS
-Adoption -		https://www.petfinder.com/developers/
+Adoption / Geolocation -		https://www.petfinder.com/developers/
 Random Dog API - 	https://some-random-api.ml/img/dog
 Random Cat API - 	https://some-random-api.ml/img/cat
-Geolocation API - ?
+                    https://aws.random.cat/meow
+
 
 
 
