@@ -1,15 +1,31 @@
-/* HEADER */
+/* BASE */
+html,body{
+    height: 100%;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER/ FOOTER */
 .header,
 .footer {
     background-color: #333;
     color: #fff;
 }
 
+.footer {
+    flex-shrink: 0;
+}
+
+/* GRID */
 .app-grid {
     display: grid;
     grid-template-rows: auto;
     grid-row-gap: 20px;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    flex: 1 0 auto;
 }
 
 /* MAIN */
