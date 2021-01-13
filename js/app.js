@@ -40,6 +40,18 @@ pf.animal.search(filter)
            return animal.photos.length > 0;
         });
 
+        //Get the animal.photos array
+        //Loop through the array
+        //Create a div for each item
+        //Create an img tag for each item
+        //append img tag to the div for each item
+
+        var photosArr = animal.photos;
+
+        photosArr.forEach(function(photo, index){
+            document.createElement('div');
+        })
+
         if(Newvar.length > 0) {
          appendPhoto(Newvar[Math.floor(Math.random() * 10)].photos[0].large);
         } else {
