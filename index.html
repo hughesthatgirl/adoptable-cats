@@ -21,7 +21,7 @@
 					</div>
 				</section>
 			</main>
-			<aside id="searchCriteria" class="sidebar searchCriteria text-center py-5">
+			<aside id="searchCriteria" class="sidebar searchCriteria text-center py-5 px-5">
 				<h2 class="text-xl">Search By Criteria Below</h2>
 				<form id="criteria" class="py-5">
 					<div id="catDogRadio" class="mt-6">
@@ -53,10 +53,22 @@
 					<button id="showCriteria" type="button" class="photo__button mt-6">Show Pets</button>
 				</form>
 			</aside>
-			<aside id="savedPets" class="sidebar savedPets text-center py-5">
-				<h2 class="text-xl">Saved Pets</h2>
-				<div id="savedPhotos" class="photo__container">
-					<!-- img tags appended via js here-->
+			<aside id="petMatch" class="sidebar petMatch text-center py-5 px-5">
+				<h2 class="text-xl">Are you a Match?</h2>
+				<div id="findMatch" class="py-5">
+					<label for="humanName" class="block mt-6">Enter Your Name</label>
+					<input id="humanName" class="match__input block mt-6 border-2 border-gray-400 border-solid" type="text" name="humanName">
+					<button id="addHumanName" type="button" class="mt-6">Add Your Name</button>
+
+					<label for="petName" class="block mt-6">Enter Pet's Name</label>
+					<input id="petName" class="match__input block mt-6 border-2 border-gray-400 border-solid" type="text" name="petName">
+					<button id="addPetName" type="button" class="mt-6">Add Your Pet's Name</button>
+
+					<button id="matchResult" type="button" class="mt-6">Get your result</button>
+				</div>
+				<div id="displayMatch" class="py-5 mt-6">
+					<h2 class="text-xl">Your Match Score...</h2>
+					<!-- display their match score-->
 				</div>
 			</aside>
 		</div>
