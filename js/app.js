@@ -35,15 +35,22 @@ function animalSearch(filter) {
 
 pf.animal.search(filter)
 
-    .then(function (response) {
+    .then(function (filter) {
+        $('.searchCriteria').on('click', appendPhoto);
+        if(filter.data.animals[0].photos.length === 0) {
+            alert('no photo')
+        }
+        function appendPhoto(){
+            let petImg = $('<img>');
+            let imgURL = filter.data.animals[0].photos[0].medium;
+            console.log(imgURL);
+            petImg.attr('src', imgURL);
+            $('#photoGrid').append(petImg);
+        }
         // Do something with `response.data.animals`
-        console.log(response.data.animals[0].photos[0].small)
-        result= response.data.animals
-        let petImg = $('<img>')
-        let imgURL = response.data.animals[0].photos[0].small;
+        console.log(filter.data.animals[0])
+        console.log(filter);
         console.log(imgURl);
-        petImg.attr('src', imgURL);
-        $('#photoGrid').append(petImg);
     })
     .catch(function (error) {
         // Handle the error
@@ -52,9 +59,5 @@ pf.animal.search(filter)
 // What do we want to search for? cats,dogs?
  animalSearch ({
     species: 'cat'  
-})
-
-$('#showCriteria').on('click', function(){
-    alert('This works');
 })
 // 
