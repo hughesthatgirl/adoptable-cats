@@ -23,8 +23,33 @@
 			</main>
 			<aside id="searchCriteria" class="sidebar searchCriteria text-center py-5">
 				<h2 class="text-xl">Search By Criteria Below</h2>
-				<form id="criteria">
-					<!-- Dropdowns etc goes here -->
+				<form id="criteria" class="py-5">
+					<div id="catDogRadio" class="mt-6">
+						<label for="cat">Cat</label>
+						<input id="cat" type="radio" name="animals">
+						<label for="dog">Dog</label>
+						<input id="dog" type="radio" name="animals">
+					</div>
+					<!-- hidden on page load, if cat selected show this dropdown-->
+					<div id="catBreeds" class="mt-6">
+						<label for="catBreeds">Choose a cat breed:</label>
+						<select name="catbreeds" id="catBreeds">
+							<option value="volvo">Volvo</option>
+							<option value="saab">Saab</option>
+							<option value="mercedes">Mercedes</option>
+							<option value="audi">Audi</option>
+						</select> 
+					</div>
+					<!-- hidden on page load, if cat selected show this dropdown-->
+					<div id="dogDropDown" class="mt-6">
+						<label for="dogBreeds">Choose a dog breed:</label>
+						<select name="dogbreeds" id="dogBreeds">
+							<option value="volvo">Volvo</option>
+							<option value="saab">Saab</option>
+							<option value="mercedes">Mercedes</option>
+							<option value="audi">Audi</option>
+						</select> 
+					</div>
 					<button id="showCriteria" type="button" class="photo__button mt-6">Show Pets</button>
 				</form>
 			</aside>
@@ -36,7 +61,7 @@
 			</aside>
 		</div>
 		<footer class="footer mt-6 py-10 px-5 text-center">
-			<p>Sometimes Cat Sometimes Dog</p>
+			<p>Adoptable Pets</p>
 			<p>&copy; 2021</p>
 		</footer>
 	
