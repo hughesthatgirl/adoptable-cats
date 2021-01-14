@@ -35,29 +35,66 @@ function animalSearch(filter) {
 
 pf.animal.search(filter)
 
-    .then(function (filter) {
-        $('.searchCriteria').on('click', appendPhoto);
-        if(filter.data.animals[0].photos.length === 0) {
-            alert('no photo')
-        }
-        function appendPhoto(){
-            let petImg = $('<img>');
-            let imgURL = filter.data.animals[0].photos[0].medium;
-            console.log(imgURL);
-            petImg.attr('src', imgURL);
-            $('#photoGrid').append(petImg);
+    .then(function (response) {
+        let Newvar = response.data.animals.filter(animal => {
+           return animal.photos.length > 0;
+        });
+
+        //Get the animal.photos array
+        //Loop through the array
+        //Create a div for each item
+        //Create an img tag for each item
+        //append img tag to the div for each item
+
+        Newvar.forEach(function(index){
+            var grid = document.querySelector('#photoGrid');
+            var div = document.createElement('div');
+            var img = document.createElement('img');
+            var info = document.createElement('div');
+
+            div.id = 'column' + index;
+            img.id = 'photo' + index;
+            img.setAttribute('src', '')//whatever the URL is
+
+            div.appendChild(img, info);
+            grid.appendChild(div);
+
+        })
+
+        if(Newvar.length > 0) {
+         appendPhoto(Newvar[Math.floor(Math.random() * 10)].photos[0].large);
+        } else {
+            alert('no photo');
         }
         // Do something with `response.data.animals`
-        console.log(filter.data.animals[0])
-        console.log(filter);
-        console.log(imgURl);
+        //console.log(Newvar);
+        //console.log(response.data.animals);
+        //console.log(imgURl);
+
+        // Pet information
     })
     .catch(function (error) {
         // Handle the error
     });
 }
+function randomCat(){
+    let ranCat = Math.floor(Math.random() * 10);
+    console.log(ranCat);
+}
+randomCat();
 // What do we want to search for? cats,dogs?
- animalSearch ({
-    species: 'cat'  
+$('#showCriteria').on('click', function(){
+    animalSearch ({
+        type: 'cat', 
+        limit: 50
+    })
 })
+function appendPhoto(imgURL){
+    $('#photoGrid').empty();
+    let petImg = $('<img>');
+    //console.log(imgURL);
+    petImg.attr('src', imgURL);
+    $('#photoGrid').append(petImg);
+}
+
 // 
