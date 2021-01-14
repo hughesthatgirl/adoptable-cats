@@ -46,10 +46,19 @@ pf.animal.search(filter)
         //Create an img tag for each item
         //append img tag to the div for each item
 
-        var photosArr = animal.photos;
+        Newvar.forEach(function(index){
+            var grid = document.querySelector('#photoGrid');
+            var div = document.createElement('div');
+            var img = document.createElement('img');
+            var info = document.createElement('div');
 
-        photosArr.forEach(function(photo, index){
-            document.createElement('div');
+            div.id = 'column' + index;
+            img.id = 'photo' + index;
+            img.setAttribute('src', '')//whatever the URL is
+
+            div.appendChild(img, info);
+            grid.appendChild(div);
+
         })
 
         if(Newvar.length > 0) {
