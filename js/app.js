@@ -34,6 +34,10 @@ pf.animal.search(filter)
             animalAge.addClass('animal-info  animal-age');
             animalAge.text('Age: ' + Newvar[i].age);
 
+            let infoWrapper = $('<div>');
+            infoWrapper.addClass('info-wrapper py-5 px-5');
+            infoWrapper.attr('id', 'infoWrapper' + [i]);
+
             let contactInfo = $('<div>');
             contactInfo.addClass('contact-info');
             contactInfo.attr('id', 'contactDiv' + [i]);
@@ -46,7 +50,8 @@ pf.animal.search(filter)
             email.addClass('animal-info  email');
             email.text(Newvar[i].contact.email);
 
-            $('#animalDiv' + [i]).append(animalImg, animalName, animalAge, contactInfo);
+            $('#animalDiv' + [i]).append(animalImg, infoWrapper);
+            $('#infoWrapper' + [i]).append(animalName, animalAge, contactInfo);
             $('#contactDiv' + [i]).append(phoneNumber, email);
         }
  

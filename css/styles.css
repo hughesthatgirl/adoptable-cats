@@ -67,11 +67,25 @@ button, .photo__button {
 /* Animal Photo Cards */
 .animal-div {
     border: 1px solid gray;
+    border-radius: 15px;
+    overflow: hidden;
 }
 
 .animal-img {
     object-fit: cover;
     width: 100%;
+}
+
+.info-wrapper {
+    font-size: 16px;
+}
+
+.animal-info {
+    word-wrap: break-word;
+}
+
+.email {
+    line-height: 1.2;
 }
 
 
@@ -98,16 +112,16 @@ button, .photo__button {
     }
 
     .photo__grid {
-        grid-template-columns: repeat(5, 1fr);
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .photo__grid:nth-last-child(1):nth-child(3n+1){
+        grid-column: 1/4;
     }
 
     .main {
         grid-column: 1/2;
         grid-row: 1/2;
-    }
-
-    .photo__grid {
-        max-width: unset;
     }
     
     .petMatch {
