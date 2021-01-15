@@ -18,25 +18,32 @@ pf.animal.search(filter)
             console.log(Newvar)
             let animalDiv = $('<div>');
             animalDiv.attr('id', 'animalDiv' + [i]);
+            animalDiv.addClass('animal-div');
             $('#photoGrid').append(animalDiv);
 
             let animalImg = $('<img>');
+            animalImg.addClass('animal-img');
             animalImg.attr('id', 'animal' + [i]);
             animalImg.attr('src', Newvar[i].photos[0].small);
 
             let animalName = $('<p>');
+            animalName.addClass('animal-info animal-name');
             animalName.text('Name: ' + Newvar[i].name);
 
             let animalAge = $('<p>');
+            animalAge.addClass('animal-info  animal-age');
             animalAge.text('Age: ' + Newvar[i].age);
 
             let contactInfo = $('<div>');
+            contactInfo.addClass('contact-info');
             contactInfo.attr('id', 'contactDiv' + [i]);
             
             let phoneNumber = $('<p>');
+            phoneNumber.addClass('animal-info  phone-number');
             phoneNumber.text(Newvar[i].contact.phone);
 
             let email = $('<p>');
+            email.addClass('animal-info  email');
             email.text(Newvar[i].contact.email);
 
             $('#animalDiv' + [i]).append(animalImg, animalName, animalAge, contactInfo);

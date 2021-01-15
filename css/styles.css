@@ -36,16 +36,9 @@ body{
 
 /* Main Photo Section */
 .photo__grid {
-    /* border: 1px solid #333;
-    padding: 20px 0;
-    height: 250px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto; */
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 20px; 
 }
 
 button, .photo__button {
