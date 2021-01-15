@@ -1,0 +1,18 @@
+// 1    peanut butter jelly N
+// 2    bird seed
+// 3    bootcamp spot
+// 4    a b
+
+// Get DOM Variables
+
+const userBox = document.querySelector('.user');                // heading and pet image  
+const headline = document.querySelector('.headline');           // title
+const firstInput = document.querySelector('.input-1');          // adoptee first name
+const lastInput = document.querySelector('.input-2');           // pet name input
+const tagline = document.querySelector('.tagline');             // page description
+const submitButton = document.querySelector('.submitBtn');      // Results button
+const inputBox = document.querySelector('.input-box');          // DIV that holds first name and pet name
+const resultDiv = document.getElementById('results');           // DIV that holds results
+const message = document.querySelector('.messageHeading');      // message heading
+const formalMessage = document.querySelector('.message');       // message body
+const userName = document.querySelector('.username');

@@ -1,0 +1,165 @@
+/* pet image styling */
+
+
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700|Satisfy&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+    min-height: 100vh;
+    /* font-family: 'Satisfy', cursive; */
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    display: flex;
+    flex-direction: column;
+}
+
+/*
+* container
+ */
+
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.user {
+    text-align: center;
+
+}
+
+.headline {
+    font-family: 'Satisfy', cursive;
+    font-size: 4rem;
+    font-weight: 300;
+    color: rgb(99, 6, 122);
+    margin: 0;
+    padding: 0;
+
+}
+
+.tagline {
+    font-family: 'Satisfy', cursive;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #333;
+    margin: 0;
+    margin-bottom: 1rem;
+    text-align: center;
+
+}
+
+.input {
+    padding: .5rem .2rem;
+    min-height: 4rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    border-radius: 1px;
+    border: none;
+    background-color: rgb(247, 245, 245);
+}
+
+.input::placeholder {
+    font-family: 'Lato';
+    text-transform: capitalize;
+    font-size: 1.3rem;
+    color: rgb(141, 138, 138);
+}
+
+.submitBtn {
+    align-self: center;
+    font-size: 1.6rem;
+    padding: 1.5rem 2rem;
+    background-color: rgb(116, 12, 201);
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+#results {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    color: rgb(104, 37, 104);
+
+
+}
+
+#results h1 {
+    font-family: 'Satisfy', cursive;
+    font-size: 4rem;
+    font-weight: 300;
+    margin-bottom: 5rem;
+
+}
+
+#results .message {
+    font-size: 2rem;
+    text-align: center;
+}
+
+#results .message span {
+    font-weight: 700;
+    font-size: 3rem;
+    color: black;
+}
+
+.username::placeholder {
+    font-size: 1.4rem;
+    font-weight: 100;
+    text-transform: uppercase;
+    color: rgb(163, 159, 159);
+}
+
+/* Responsive Styling */
+
+@media(max-width:90rem) {
+    .input-box {
+        width: 20%;
+    }
+}
+
+
+@media(max-width:75rem) {
+    .input-box {
+        width: 25%;
+    }
+}
+
+
+@media(max-width:65rem) {
+    .input-box {
+        width: 30%;
+    }
+
+
+}
+
+@media(max-width:50rem) {
+    .input-box {
+        width: 45%;
+    }
+
+    .userInput-box .username {
+        width: 55%;
+    }
+
+    nav {
+        flex-direction: column;
+
+    }
+}
