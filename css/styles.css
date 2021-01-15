@@ -24,19 +24,19 @@ body{
     display: grid;
     grid-template-rows: auto;
     grid-row-gap: 20px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     flex: 1 0 auto;
 }
 
 /* MAIN */
 .main {
-    grid-column: 1/5;
-    grid-row: 2/3;
+    grid-column: 1/3;
+    grid-row: 1/2;
 }
 
 /* Main Photo Section */
 .photo__grid {
-    border: 1px solid #333;
+    /* border: 1px solid #333;
     padding: 20px 0;
     height: 250px;
     display: flex;
@@ -45,7 +45,7 @@ body{
     width: 100%;
     max-width: 600px;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto; */
 }
 
 button, .photo__button {
@@ -63,14 +63,9 @@ button, .photo__button {
     width: 100%;
 }
 
-.searchCriteria {
-    grid-column: 1/5;
-    grid-row: 1/2;
-}
-
 .petMatch {
-    grid-column: 1/5;
-    grid-row: 3/4;
+    grid-column: 1/3;
+    grid-row: 2/3;
 }
 
 /* Pet Match */
@@ -83,25 +78,19 @@ button, .photo__button {
 @media only screen and (min-width: 1000px){
     .app-grid{
         grid-column-gap: 40px;
-        grid-template-columns: 1fr 275px 275px 1fr;
     }
 
     .main {
-        grid-column: 2/4;
+        grid-column: 1/2;
         grid-row: 1/2;
     }
 
     .photo__grid {
         max-width: unset;
     }
-
-    .searchCriteria {
-        grid-column: 1/2;
-        grid-row: 1/2;
-    }
     
     .petMatch {
-        grid-column: 4/5;
+        grid-column: 2/3;
         grid-row: 1/2;
     }
 }
