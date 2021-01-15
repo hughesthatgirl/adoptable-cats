@@ -21,54 +21,28 @@
 					</div>
 				</section>
 			</main>
-			<aside id="searchCriteria" class="sidebar searchCriteria text-center py-5 px-5">
-				<h2 class="text-xl">Search By Criteria Below</h2>
-				<form id="criteria" class="py-5">
-					<div id="catDogRadio" class="mt-6">
-						<label for="cat">Cat</label>
-						<input id="cat" type="radio" name="animals">
-						<label for="dog">Dog</label>
-						<input id="dog" type="radio" name="animals">
-					</div>
-					<!-- hidden on page load, if cat selected show this dropdown-->
-					<div id="catBreeds" class="mt-6">
-						<label for="catBreeds">Choose a cat breed:</label>
-						<select name="catbreeds" id="catBreeds">
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
-						</select> 
-					</div>
-					<!-- hidden on page load, if cat selected show this dropdown-->
-					<div id="dogDropDown" class="mt-6">
-						<label for="dogBreeds">Choose a dog breed:</label>
-						<select name="dogbreeds" id="dogBreeds">
-							<option value="volvo">Volvo</option>
-							<option value="saab">Saab</option>
-							<option value="mercedes">Mercedes</option>
-							<option value="audi">Audi</option>
-						</select> 
-					</div>
-					<button id="showCriteria" type="button" class="photo__button mt-6">Show Pets</button>
-				</form>
-			</aside>
-			<aside id="petMatch" class="sidebar petMatch text-center py-5 px-5">
-				<h2 class="text-xl">Are you a Match?</h2>
-				<div id="findMatch" class="py-5">
-					<label for="humanName" class="block mt-6">Enter Your Name</label>
-					<input id="humanName" class="match__input block mt-6 border-2 border-gray-400 border-solid" type="text" name="humanName">
-					<button id="addHumanName" type="button" class="mt-6">Add Your Name</button>
-
-					<label for="petName" class="block mt-6">Enter Pet's Name</label>
-					<input id="petName" class="match__input block mt-6 border-2 border-gray-400 border-solid" type="text" name="petName">
-					<button id="addPetName" type="button" class="mt-6">Add Your Pet's Name</button>
-
-					<button id="matchResult" type="button" class="mt-6">Get your result</button>
+			<aside class="sidebar petMatch text-center py-5 px-5">
+				<div>
+					<h2 class="text-xl">Are you a Match?</h2>
+					<p>Want to find out how compatible you are with your chosen pet? Click the button below!</p>
+					<button id="showMatchApp" type="button">Find Out!</button>
 				</div>
-				<div id="displayMatch" class="py-5 mt-6">
-					<h2 class="text-xl">Your Match Score...</h2>
-					<!-- display their match score-->
+				<div id="petMatch">
+					<div id="findMatch" class="py-5">
+						<label for="humanName" class="block mt-6">Enter Your Name</label>
+						<input id="humanName" class="match__input block mt-6 border-2 border-gray-400 border-solid" type="text" name="humanName">
+						<button id="addHumanName" type="button" class="mt-6">Add Your Name</button>
+	
+						<label for="petName" class="block mt-6">Pet's Name</label>
+						<input id="petName" class="match__input block mt-6 border-2 border-gray-400 border-solid" type="text" name="petName">
+						<!-- <button id="addPetName" type="button" class="mt-6">Add Your Pet's Name</button> -->
+	
+						<button id="matchResult" type="button" class="mt-6">Get your result</button>
+					</div>
+					<div id="displayMatch" class="py-5 mt-6">
+						<h2 class="text-xl">Your Match Score is: <span id="matchPercent"></span></h2>
+						<p id="matchContent">display funny paragraph here</p>
+					</div>
 				</div>
 			</aside>
 		</div>
