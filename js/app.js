@@ -37,21 +37,49 @@ pf.animal.search(filter)
 
     .then(function (response) {
         let Newvar = response.data.animals.filter(animal => {
-           return animal.photos.length > 0;
+           return animal.photos.length > 0
         });
+        $('#photoGrid').empty();
+        for(var i = 0; i < 5; i++){
+            console.log(Newvar)
+            let animalDiv = $('<div>');
+            animalDiv.attr('id', 'animalDiv' + [i]);
+            $('#photoGrid').append(animalDiv);
 
+            let animalImg = $('<img>');
+            animalImg.attr('id', 'animal' + [i]);
+            animalImg.attr('src', Newvar[i].photos[0].small);
+
+            let animalName = $('<p>');
+            animalName.text('Name: ' + Newvar[i].name);
+
+            let animalAge = $('<p>');
+            animalAge.text('Age: ' + Newvar[i].age);
+
+            let contactInfo = $('<div>');
+            contactInfo.attr('id', 'contactDiv' + [i]);
+            
+            let phoneNumber = $('<p>');
+            phoneNumber.text(Newvar[i].contact.phone);
+
+            let email = $('<p>');
+            email.text(Newvar[i].contact.email);
+
+            $('#animalDiv' + [i]).append(animalImg, animalName, animalAge, contactInfo);
+            $('#contactDiv' + [i]).append(phoneNumber, email);
+        }
         //Get the animal.photos array
         //Loop through the array
         //Create a div for each item
         //Create an img tag for each item
         //append img tag to the div for each item
 
-        Newvar.forEach(function(index){
+        /*Newvar.forEach(function(index){
             var grid = document.querySelector('#photoGrid');
             var div = document.createElement('div');
             var img = document.createElement('img');
             var info = document.createElement('div');
-
+            console.log(Newvar);
             div.id = 'column' + index;
             img.id = 'photo' + index;
             img.setAttribute('src', '')//whatever the URL is
@@ -59,15 +87,14 @@ pf.animal.search(filter)
             div.appendChild(img, info);
             grid.appendChild(div);
 
-        })
-
+        }000)
+*/
         if(Newvar.length > 0) {
-         appendPhoto(Newvar[Math.floor(Math.random() * 10)].photos[0].large);
+         //appendPhoto(Newvar[Math.floor(Math.random() * 10)].photos[0].large);
         } else {
             alert('no photo');
         }
         // Do something with `response.data.animals`
-        //console.log(Newvar);
         //console.log(response.data.animals);
         //console.log(imgURl);
 
