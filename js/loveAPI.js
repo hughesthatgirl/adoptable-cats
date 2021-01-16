@@ -87,12 +87,19 @@ function dataUI(result) {
 
     } else {
         message.textContent = `WATCH OUT!`;
-        formalMessage.innerHTML = `${result.sname} is a  <span> ${result.percentage}% </span> match. Seriously ${result.sname}, this animal most definitely should not be your pet! We urge you to search again for happiness! Please forget ${result.sname} is up for adoption. Don't be sad, there is a someone out there for ${result.sname}. Thank you come again!`;
+        formalMessage.innerHTML = `${result.sname} is a  <span> ${result.percentage}% </span> match. Seriously ${result.fname}, this animal most definitely should not be your pet! We urge you to search again for happiness! Please forget ${result.sname} is up for adoption. Don't be sad, there is a someone out there for ${result.sname}. Thank you come again!`;
     }
-    setTimeout(() => {
-        clearData();
-    }, 1000000);
+    // creating a reset button
+let resetButton = $("<button>")
+resetButton.attr("id","resetBtn")
+resetButton.text("RESET")
+
+$(".message").append(resetButton)
+
+$("#resetBtn").on("click", clearData)
+    
 }
+
 
 //Entry error
 function showError(error) {
@@ -110,7 +117,7 @@ function clearData() {
     resultDiv.style.display = 'none';
     userBox.style.display = 'block';
     tagline.style.display = 'block';
-    inputBox.style.display = 'flex';
+    inputBox.style.display = 'block';
     firstInput.value = '';
     lastInput.value = '';
     message.textContent = ``;
