@@ -14,7 +14,7 @@
 			<h1 class="header__h1 text-4xl">Adoptable Pets</h1>
 		</header>
 		<div class="app-grid">
-			<main class="main mt-6 py-10 px-5">
+			<main class="main py-10 px-5">
 				<section class="photo__section">
 					<div id="photoGrid" class="photo__grid text-center text-2xl">
 						<!-- img tag appended via js here-->
@@ -22,13 +22,13 @@
 					<button id="showCriteria" type="button" class="photo__button mt-6">Show Pets</button>
 				</section>
 			</main>
-			<aside class="sidebar petMatch text-center py-5 px-5">
-				<div id="matchScreen" class="user py-5">
+			<aside class="sidebar petMatch text-center py-10 px-5">
+				<div id="matchScreen" class="user">
 					<h2 class="headline text-xl">Are you a Match?</h2>
 					<img src="" alt="chosen pet" class="pet_img">
 					<p class="tagline mt-6">Want to know how much your pet will love you?</p>
 				</div>
-				<div id="petMatch" class="input-box petMatch py-5">
+				<div id="petMatch" class="input-box petMatch">
 					<label for="humanName" class="block mt-6">Enter Your Name</label>
 					<input id="humanName" class="match__input input input-1 block mt-6 border-2 border-gray-400 border-solid" type="text" name="humanName" value="">
 					
@@ -37,9 +37,9 @@
 
 					<button type="button" class="submitBtn mt-6">Get Your Result</button>
 				</div>
-				<div id="results" class="messageBody py-5 mt-6">
-					<h2 class="message-1 text-xl"></h1>
-					<p class="message"></p>
+				<div id="results" class="messageBody">
+					<h2 class="message-1 text-2xl"></h2>
+					<p class="message mt-6"></p>
 				</div>
 			</aside>
 		</div>
