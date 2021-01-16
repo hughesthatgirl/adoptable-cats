@@ -1,68 +1,71 @@
+// Defines The api keys udes.
 var pfApiKey = 'hoxfe17CJiTbWmobl1EoByfn5PBmuon4tnV2xHc2sKXahYP3FG' 
 var pfSecretApiKey = '9MQ1EbHmO4Ew0mh9DbQduwBqONHPw610qvzwEWBd'
-
+let j = Math.floor(Math.random() * 20);
 let result;
 
 var pf = new petfinder.Client({apiKey: pfApiKey, secret: pfSecretApiKey});
 
 function animalSearch(filter) {
-
+// Adds search peramiters for the API.
 pf.animal.search(filter)
-
+    
     .then(function (response) {
+        /*Takes the arrays that the API is giving us, and gives us an
+        all of the objects that are relavent to our peramiters. */
         let Newvar = response.data.animals.filter(animal => {
            return animal.photos.length > 0
         });
+        //Sets the #photoGrid div to empty to prevent repeats.
         $('#photoGrid').empty();
-        for(var i = 0; i < 5; i++){
-            console.log(Newvar)
+        // For the first 5 objects in the filtered array...
+        for(var i = 0; i < 5; i++) {
+            j++;
+            if(j > 40) {
+                j = 1;
+            }
+            console.log(j);
+            //Create a <div> tag to hold everything in #photoGrid.
             let animalDiv = $('<div>');
-            animalDiv.attr('id', 'animalDiv' + [i]);
+            animalDiv.attr('id', 'animalDiv' + [j]);
             animalDiv.addClass('animal-div');
             $('#photoGrid').append(animalDiv);
-
+            //Create an <img> tag with picture of animal.
             let animalImg = $('<img>');
             animalImg.addClass('animal-img');
-            animalImg.attr('id', 'animal' + [i]);
-            animalImg.attr('src', Newvar[i].photos[0].small);
-
+            animalImg.attr('id', 'animal' + [j]);
+            animalImg.attr('data-petname', Newvar[j].name);
+            animalImg.attr('src', Newvar[j].photos[0].large);
+            //Create a <p> tag with the animals name.
             let animalName = $('<p>');
             animalName.addClass('animal-info animal-name');
-            animalName.text('Name: ' + Newvar[i].name);
-
+            animalName.text('Name: ' + Newvar[j].name);
+            //Create a <p> tag with the animals age.
             let animalAge = $('<p>');
             animalAge.addClass('animal-info  animal-age');
-            animalAge.text('Age: ' + Newvar[i].age);
-
+            animalAge.text('Age: ' + Newvar[j].age);
+            //Creates a <div> tag to hold the info information.
             let infoWrapper = $('<div>');
             infoWrapper.addClass('info-wrapper py-5 px-5');
-            infoWrapper.attr('id', 'infoWrapper' + [i]);
-
+            infoWrapper.attr('id', 'infoWrapper' + [j]);
+            //Create a <div> tag to hold the contact info.
             let contactInfo = $('<div>');
             contactInfo.addClass('contact-info');
-            contactInfo.attr('id', 'contactDiv' + [i]);
-            
+            contactInfo.attr('id', 'contactDiv' + [j]);
+            //Creates a <p> tag to hold the phone number.
             let phoneNumber = $('<p>');
             phoneNumber.addClass('animal-info  phone-number');
-            phoneNumber.text(Newvar[i].contact.phone);
-
+            phoneNumber.text(Newvar[j].contact.phone);
+            //Creates a <p> tag to hold the email.
             let email = $('<p>');
             email.addClass('animal-info  email');
-            email.text(Newvar[i].contact.email);
-
-            $('#animalDiv' + [i]).append(animalImg, infoWrapper);
-            $('#infoWrapper' + [i]).append(animalName, animalAge, contactInfo);
-            $('#contactDiv' + [i]).append(phoneNumber, email);
+            email.text(Newvar[j].contact.email);
+            //Appends information.
+            $('#animalDiv' + [j]).append(animalImg, infoWrapper);
+            $('#infoWrapper' + [j]).append(animalName, animalAge, contactInfo);
+            $('#contactDiv' + [j]).append(phoneNumber, email);
         }
  
-        if(Newvar.length > 0) {
-         //appendPhoto(Newvar[Math.floor(Math.random() * 10)].photos[0].large);
-        } else {
-            alert('no photo');
-        }
-        // Do something with `response.data.animals`
-        //console.log(response.data.animals);
-        //console.log(imgURl);
 
         // Pet information
     })
@@ -70,24 +73,13 @@ pf.animal.search(filter)
         // Handle the error
     });
 }
-function randomCat(){
-    let ranCat = Math.floor(Math.random() * 10);
-    console.log(ranCat);
-}
-randomCat();
+
 // What do we want to search for? cats,dogs?
 $('#showCriteria').on('click', function(){
     animalSearch ({
         type: 'cat', 
-        limit: 50
+        limit: 100
     })
 })
-function appendPhoto(imgURL){
-    $('#photoGrid').empty();
-    let petImg = $('<img>');
-    //console.log(imgURL);
-    petImg.attr('src', imgURL);
-    $('#photoGrid').append(petImg);
-}
 
 // 
