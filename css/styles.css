@@ -6,6 +6,7 @@ html,body{
 body{
     display: flex;
     flex-direction: column;
+    font-family: 'Montserrat Alternates', sans-serif;
 }
 
 /* HEADER/ FOOTER */
@@ -13,10 +14,54 @@ body{
 .footer {
     background-color: #333;
     color: #fff;
+    background: #1abc9c;
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: white;
+    font-size: 20px;
+    text-align: center;
 }
 
+.header__h1 {
+    margin: 5px;
+    padding: 5%;
+    background: black;
+    line-height: 3px;
+    height: 40px;
+    font-size: 40px;
+    width: fit-content;
+    border: ridge;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Image for header */
+.header {
+    background-image: url("../images/paw-print-clip-art-transparent-background-19.png");
+    background-size: contain;
+}
+    
 .footer {
     flex-shrink: 0;
+}
+
+/* Font color and bolding of sidebar form */
+.headline, .block {
+    color: #1abc9c;
+    font-weight: bolder;
+}
+
+/* Adding border to sidebar form */
+.petMatch{
+    border: groove;
+    border-color: #1abc9c;
+    padding: 5%;
+    margin: 10px;
+    font-weight: bolder;
+}
+
+/* Changing color of buttons */
+.submitBtn, #showCriteria {
+    background-color:  #1abc9c;
 }
 
 /* GRID */
