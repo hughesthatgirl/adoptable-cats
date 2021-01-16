@@ -104,8 +104,10 @@ $('#showCriteria').on('click', function(){
 
 var pets = document.querySelectorAll('.animal-img');
 var petName = document.querySelector('#petName');
+var img = document.querySelector(".pet_img");
 document.addEventListener('click', function (event) {
     if ( event.target.classList.contains( 'animal-img' )) {
-      	petName.value = event.target.getAttribute('data-petname');
+          petName.value = event.target.getAttribute('data-petname');
+          img.src = event.target.getAttribute("src");
     }
 }, false);
