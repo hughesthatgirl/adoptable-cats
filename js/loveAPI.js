@@ -39,7 +39,7 @@ function fromUI() {
     userBox.style.display = 'none';
     tagline.style.display = 'none';
     inputBox.style.display = 'none';
-    resultDiv.style.display = 'flex'
+    resultDiv.style.display = 'block'
 
     //validation if not blank
     if (firstName !== '' && petName !== '') {

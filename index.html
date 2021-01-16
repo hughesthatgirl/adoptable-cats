@@ -23,28 +23,23 @@
 				</section>
 			</main>
 			<aside class="sidebar petMatch text-center py-5 px-5">
-				<div id="matchScreen" class="py-5">
-					<h2 class="text-xl">Are you a Match?</h2>
-					<p class="mt-6">Want to find out how compatible you are with your chosen pet?</p>
-					<p class="mt-6">Click the button below!</p>
-					<button id="showMatchApp"class="mt-6" type="button">Find Out!</button>
+				<div id="matchScreen" class="user py-5">
+					<h2 class="headline text-xl">Are you a Match?</h2>
+					<img src="" alt="chosen pet" class="pet_img">
+					<p class="tagline mt-6">Want to know how much your pet will love you?</p>
 				</div>
-				<div id="petMatch" class="petMatch">
-					<div class="py-5">
-						<label for="humanName" class="block mt-6">Enter Your Name</label>
-						<input id="humanName" class="match__input block mt-6 border-2 border-gray-400 border-solid" type="text" name="humanName">
-						<button id="addHumanName" type="button" class="mt-6">Add Your Name</button>
-	
-						<label for="petName" class="block mt-6">Pet's Name</label>
-						<input id="petName" class="match__input block mt-6 border-2 border-gray-400 border-solid" type="text" name="petName">
-						<!-- <button id="addPetName" type="button" class="mt-6">Add Your Pet's Name</button> -->
-	
-						<button id="matchResult" type="button" class="mt-6">Get your result</button>
-					</div>
-					<div id="displayMatch" class="py-5 mt-6">
-						<h2 class="text-xl">Your Match Score is: <span id="matchPercent"></span></h2>
-						<p id="matchContent">display funny paragraph here</p>
-					</div>
+				<div id="petMatch" class="input-box petMatch py-5">
+					<label for="humanName" class="block mt-6">Enter Your Name</label>
+					<input id="humanName" class="match__input input input-1 block mt-6 border-2 border-gray-400 border-solid" type="text" name="humanName" value="">
+					
+					<label for="petName" class="block mt-6">Pet's Name</label>
+					<input id="petName" class="match__input input input-2 block mt-6 border-2 border-gray-400 border-solid" type="text" name="petName" value="">
+
+					<button type="button" class="submitBtn mt-6">Get Your Result</button>
+				</div>
+				<div id="results" class="messageBody py-5 mt-6">
+					<h2 class="message-1 text-xl"></h1>
+					<p class="message"></p>
 				</div>
 			</aside>
 		</div>
@@ -58,6 +53,8 @@
 		<!-- PetFinder  -->
 		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 		<script src="https://unpkg.com/@petfinder/petfinder-js/dist/petfinder.min.js"></script>
+		<!--Love API-->
+		<script src="./js/loveAPI.js"></script>
 		<!-- JavaScript Link -->
 		<script src="./js/app.js"></script>
 
