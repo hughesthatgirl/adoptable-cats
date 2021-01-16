@@ -24,30 +24,37 @@ body{
     display: grid;
     grid-template-rows: auto;
     grid-row-gap: 20px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     flex: 1 0 auto;
 }
 
+.app-grid,
+.photo__grid {
+    min-height: 0;
+    min-width: 0;
+}
+
+.app-grid > *,
+.photo__grid > * {
+    min-width: 0;
+    overflow: hidden;
+}
+
+.photo__grid {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-rows: auto; 
+}
+
+
 /* MAIN */
 .main {
-    grid-column: 1/5;
+    grid-column: 1/3;
     grid-row: 1/2;
 }
 
-/* RANDOM PHOTO SECTION */
-.photo__grid {
-    border: 1px solid #333;
-    padding: 20px 0;
-    height: 250px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-.photo__button {
+/* Main Photo Section */
+button, .photo__button {
     border: 1px solid transparent;
     background-color: #333;
     color: #fff;
@@ -57,46 +64,68 @@ body{
     margin-right: auto;
 }
 
+/* Animal Photo Cards */
+.animal-div {
+    border: 1px solid gray;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.animal-img {
+    object-fit: cover;
+    width: 100%;
+}
+
+.info-wrapper {
+    font-size: 16px;
+}
+
+.animal-info {
+    word-wrap: break-word;
+}
+
+.email {
+    line-height: 1.2;
+}
+
+
 /* SIDEBARS */
 .sidebar {
     width: 100%;
-    overflow: auto;
-    white-space: nowrap;
 }
 
-.searchCriteria {
-    grid-column: 1/5;
+.petMatch {
+    grid-column: 1/3;
     grid-row: 2/3;
 }
 
-.savedPets {
-    grid-column: 1/5;
-    grid-row: 3/4;
+/* Pet Match */
+.match__input {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 /* DESKTOP STYLES 1000PX > */
 @media only screen and (min-width: 1000px){
     .app-grid{
         grid-column-gap: 40px;
-        grid-template-columns: 1fr 275px 275px 1fr;
-    }
-
-    .main {
-        grid-column: 2/4;
-        grid-row: 1/2;
     }
 
     .photo__grid {
-        max-width: unset;
+        grid-template-columns: repeat(3, 1fr);
     }
 
-    .searchCriteria {
+    .photo__grid:nth-last-child(1):nth-child(3n+1){
+        grid-column: 1/4;
+    }
+
+    .main {
         grid-column: 1/2;
         grid-row: 1/2;
     }
     
-    .savedPets {
-        grid-column: 4/5;
+    .petMatch {
+        grid-column: 2/3;
         grid-row: 1/2;
     }
 }
