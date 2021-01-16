@@ -82,4 +82,12 @@ $('#showCriteria').on('click', function(){
     })
 })
 
-// 
+// make pet image button to pull pet name
+
+var pets = document.querySelectorAll('.animal-img');
+var petName = document.querySelector('#petName');
+document.addEventListener('click', function (event) {
+    if ( event.target.classList.contains( 'animal-img' )) {
+      	petName.value = event.target.getAttribute('data-petname');
+    }
+}, false);
