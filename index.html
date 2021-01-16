@@ -3,15 +3,16 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1">
-		<title>Sometimes Cat Sometimes Dog</title>
+		<title>Adoptable Cats</title>
 		<!-- CSS  -->
 		<link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="./css/styles.css" type="text/css">
+		<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&display=swap" rel="stylesheet">
 	</head>
 	<body>
 		<!-- Geolocation Input Box -->
 		<header class="header py-10 px-5 text-center">
-			<h1 class="header__h1 text-4xl">Adoptable Pets</h1>
+			<h1 class="header__h1 text-4xl">Adoptable Cats</h1>
 		</header>
 		<div class="app-grid">
 			<main class="main py-10 px-5">
@@ -19,20 +20,20 @@
 					<div id="photoGrid" class="photo__grid text-center text-2xl">
 						<!-- img tag appended via js here-->
 					</div>
-					<button id="showCriteria" type="button" class="photo__button mt-6">Show Pets</button>
+					<button id="showCriteria" type="button" class="photo__button mt-6">Show Cats</button>
 				</section>
 			</main>
 			<aside class="sidebar petMatch text-center py-10 px-5">
 				<div id="matchScreen" class="user">
-					<h2 class="headline text-xl">Are you a Match?</h2>
-					<img src="" alt="chosen pet" class="pet_img">
-					<p class="tagline mt-6">Want to know how much your pet will love you?</p>
+					<h2 class="headline text-xl">Are you a match?</h2>
+					<img src="" alt="Chosen Cat" class="pet_img">
+					<p class="tagline mt-6">Want to know how much your cat will love you?</p>
 				</div>
 				<div id="petMatch" class="input-box petMatch">
-					<label for="humanName" class="block mt-6">Enter Your Name</label>
+					<label for="humanName" class="block mt-6">Enter your name</label>
 					<input id="humanName" class="match__input input input-1 block mt-6 border-2 border-gray-400 border-solid" type="text" name="humanName" value="">
 					
-					<label for="petName" class="block mt-6">Pet's Name</label>
+					<label for="petName" class="block mt-6">Enter your cat's name</label>
 					<input id="petName" class="match__input input input-2 block mt-6 border-2 border-gray-400 border-solid" type="text" name="petName" value="">
 
 					<button type="button" class="submitBtn mt-6">Get Your Result</button>
@@ -44,7 +45,7 @@
 			</aside>
 		</div>
 		<footer class="footer mt-6 py-10 px-5 text-center">
-			<p>Adoptable Pets</p>
+			<p>Adoptable Cats</p>
 			<p>&copy; 2021</p>
 		</footer>
 	
