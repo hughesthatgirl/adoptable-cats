@@ -14,7 +14,7 @@
 			<h1 class="header__h1 text-4xl">Adoptable Pets</h1>
 		</header>
 		<div class="app-grid">
-			<main class="main mt-6 py-10 px-5">
+			<main class="main py-10 px-5">
 				<section class="photo__section">
 					<div id="photoGrid" class="photo__grid text-center text-2xl">
 						<!-- img tag appended via js here-->
@@ -22,29 +22,24 @@
 					<button id="showCriteria" type="button" class="photo__button mt-6">Show Pets</button>
 				</section>
 			</main>
-			<aside class="sidebar petMatch text-center py-5 px-5">
-				<div id="matchScreen" class="py-5">
-					<h2 class="text-xl">Are you a Match?</h2>
-					<p class="mt-6">Want to find out how compatible you are with your chosen pet?</p>
-					<p class="mt-6">Click the button below!</p>
-					<button id="showMatchApp"class="mt-6" type="button">Find Out!</button>
+			<aside class="sidebar petMatch text-center py-10 px-5">
+				<div id="matchScreen" class="user">
+					<h2 class="headline text-xl">Are you a Match?</h2>
+					<img src="" alt="chosen pet" class="pet_img">
+					<p class="tagline mt-6">Want to know how much your pet will love you?</p>
 				</div>
-				<div id="petMatch" class="petMatch">
-					<div class="py-5">
-						<label for="humanName" class="block mt-6">Enter Your Name</label>
-						<input id="humanName" class="match__input block mt-6 border-2 border-gray-400 border-solid" type="text" name="humanName">
-						<button id="addHumanName" type="button" class="mt-6">Add Your Name</button>
-	
-						<label for="petName" class="block mt-6">Pet's Name</label>
-						<input id="petName" class="match__input block mt-6 border-2 border-gray-400 border-solid" type="text" name="petName">
-						<!-- <button id="addPetName" type="button" class="mt-6">Add Your Pet's Name</button> -->
-	
-						<button id="matchResult" type="button" class="mt-6">Get your result</button>
-					</div>
-					<div id="displayMatch" class="py-5 mt-6">
-						<h2 class="text-xl">Your Match Score is: <span id="matchPercent"></span></h2>
-						<p id="matchContent">display funny paragraph here</p>
-					</div>
+				<div id="petMatch" class="input-box petMatch">
+					<label for="humanName" class="block mt-6">Enter Your Name</label>
+					<input id="humanName" class="match__input input input-1 block mt-6 border-2 border-gray-400 border-solid" type="text" name="humanName" value="">
+					
+					<label for="petName" class="block mt-6">Pet's Name</label>
+					<input id="petName" class="match__input input input-2 block mt-6 border-2 border-gray-400 border-solid" type="text" name="petName" value="">
+
+					<button type="button" class="submitBtn mt-6">Get Your Result</button>
+				</div>
+				<div id="results" class="messageBody">
+					<h2 class="message-1 text-2xl"></h2>
+					<p class="message mt-6"></p>
 				</div>
 			</aside>
 		</div>
@@ -58,6 +53,8 @@
 		<!-- PetFinder  -->
 		<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 		<script src="https://unpkg.com/@petfinder/petfinder-js/dist/petfinder.min.js"></script>
+		<!--Love API-->
+		<script src="./js/loveAPI.js"></script>
 		<!-- JavaScript Link -->
 		<script src="./js/app.js"></script>
 
