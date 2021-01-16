@@ -60,10 +60,19 @@ pf.animal.search(filter)
             let email = $('<p>');
             email.addClass('animal-info  email');
             email.text(Newvar[j].contact.email);
+            // creates a <p> tag to hold the city
+            let city = $("<p>");
+            city.addClass('animal-info city');
+            city.text("City: " + Newvar[j].contact.address.city);
+            // Creates a <p> tag to hold the state info
+            let state = $("<p>");
+            state.addClass('animal-info state');
+            state.text("State: " + Newvar[j].contact.address.state);
             //Appends information.
             $('#animalDiv' + [j]).append(animalImg, infoWrapper);
             $('#infoWrapper' + [j]).append(animalName, animalAge, contactInfo);
             $('#contactDiv' + [j]).append(phoneNumber, email);
+            $('#contactDiv'+ [j]).append(city, state)
         }
  
 
