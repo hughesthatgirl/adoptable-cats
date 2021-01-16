@@ -19,7 +19,7 @@ pf.animal.search(filter)
         //Sets the #photoGrid div to empty to prevent repeats.
         $('#photoGrid').empty();
         // For the first 5 objects in the filtered array...
-        for(var i = 0; i < 5; i++) {
+        for(var i = 0; i < 3; i++) {
             j++;
             if(j > 40) {
                 j = 1;
@@ -30,12 +30,19 @@ pf.animal.search(filter)
             animalDiv.attr('id', 'animalDiv' + [j]);
             animalDiv.addClass('animal-div');
             $('#photoGrid').append(animalDiv);
+            // create a div for each image
+            let imageDiv = $('<div>');
+            imageDiv.attr('id', 'imageDiv' + [j]);
+            imageDiv.addClass('image-div');
+
             //Create an <img> tag with picture of animal.
             let animalImg = $('<img>');
             animalImg.addClass('animal-img');
             animalImg.attr('id', 'animal' + [j]);
             animalImg.attr('data-petname', Newvar[j].name);
             animalImg.attr('src', Newvar[j].photos[0].large);
+            
+
             //Create a <p> tag with the animals name.
             let animalName = $('<p>');
             animalName.addClass('animal-info animal-name');
@@ -69,10 +76,12 @@ pf.animal.search(filter)
             state.addClass('animal-info state');
             state.text("State: " + Newvar[j].contact.address.state);
             //Appends information.
-            $('#animalDiv' + [j]).append(animalImg, infoWrapper);
+            $('#animalDiv' + [j]).append(imageDiv, infoWrapper);
+            $('#imageDiv' + [j]).append(animalImg);
             $('#infoWrapper' + [j]).append(animalName, animalAge, contactInfo);
             $('#contactDiv' + [j]).append(phoneNumber, email);
             $('#contactDiv'+ [j]).append(city, state)
+
         }
  
 
