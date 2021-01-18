@@ -7,27 +7,18 @@ Adoptable Cats
 Cat lovers can come to our website and search for different types of cats that are available for adoption. They can also input their name and the pet name to discover how compatiable they are with the cat! 
 
 # User Story
-AS a person who loves cat and dogs
-I WANT to see pictures of cats and dog
-SO I can be happy and adopt an animal
-
-WIREFRAME - SCREEN
-<img src = "images\Screen Shot 2021-01-07 at 8.37.40 PM.png">
-
-WIREFRAME – MOBILE
-<img src = "images\Screen Shot 2021-01-07 at 8.49.22 PM.png">
+* AS a person who has been scorned before by pet incompatability :crying_cat_face:
+* I WANT to make sure that I am compatiable with my cat :smirk_cat:
+* SO I can be happy with the cat of my dreams :heart_eyes_cat:
 
 # APIs
-Adoption: https://www.petfinder.com/developers/
-Love Maker: https://love-calculator.p.rapidapi.com
+* Adoption: https://www.petfinder.com/developers/
+* Love Maker: https://love-calculator.p.rapidapi.com
 
-# Tasks
-0	Pseudo Code
-0	HTML
-0	JavaScript
-0	CSS Styling
+Deployed Website: https://hughesthatgirl.github.io/adoptable-cats/
 
-Meeting 1
-***breakdown tasks
+![Screenshot of page load](./images/screen_shot_2021-01-18_at_1.04.21_pm.png)
 
-Deployed Website: https://hughesthatgirl.github.io/cat-dog/
+![Screenshot of page after button click](./images/screen_shot_2021-01-18_at_12.54.04_pm.png)
+
+![Screenshot of page after rendering pet compatability](./images/screen_shot_2021-01-18_at_12.57.26_pm.png)
