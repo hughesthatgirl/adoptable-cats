@@ -1,4 +1,8 @@
 /* BASE */
+html {
+    overflow-x: hidden;
+}
+
 html,body{
     height: 100%;
 }
@@ -47,11 +51,10 @@ body{
 }
 
 /* Adding border to sidebar form */
-.petMatch{
+.petMatch, .input-box {
     border: groove;
     border-color: #1abc9c;
     padding: 5%;
-    margin: 10px;
     font-weight: bolder;
 }
 
@@ -67,6 +70,7 @@ body{
     grid-gap: 20px;
     grid-template-columns: 2fr 1fr;
     flex: 1 0 auto;
+    padding: 0 10px;
 }
 
 .app-grid,

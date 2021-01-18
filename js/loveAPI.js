@@ -91,6 +91,7 @@ function dataUI(result) {
     }
     // creating a reset button
 let resetButton = $("<button>")
+resetButton.addClass("mt-6")
 resetButton.attr("id","resetBtn")
 resetButton.text("RESET")
 
