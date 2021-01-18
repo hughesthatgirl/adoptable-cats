@@ -1,32 +1,27 @@
-# cat-dog
+# kit-tinder
 
 # Title
-Sometimes Cat, Sometimes Dog
+Adoptable Cats
 
 # Project Description
-Lover of animals search random image. Save option for possible matches
+Cat lovers can come to our website and search for different types of cats that are available for adoption. They can also input their name and the pet name to discover how compatiable they are with the cat! 
 
 # User Story
-AS 		a person who loves cat and dogs
-I WANT 		to see pictures of cats and dog
-SO 		I can be happy and adopt an animal
+AS a person who loves cat and dogs
+I WANT to see pictures of cats and dog
+SO I can be happy and adopt an animal
 
+WIREFRAME - SCREEN
+<img src = "images\Screen Shot 2021-01-07 at 8.37.40 PM.png">
 
+WIREFRAME – MOBILE
+<img src = "images\Screen Shot 2021-01-07 at 8.49.22 PM.png">
 
-WIREFRAME - SCREEN				WIREFRAME – MOBILE
+# APIs
+Adoption: https://www.petfinder.com/developers/
+Love Maker: https://love-calculator.p.rapidapi.com
 
- 	      
-
-# APIS
-Adoption -		https://www.petfinder.com/developers/
-Random Dog API - 	https://some-random-api.ml/img/dog
-Random Cat API - 	https://some-random-api.ml/img/cat
-Geolocation API - ?
-
-
-
-
-# TASKS
+# Tasks
 0	Pseudo Code
 0	HTML
 0	JavaScript
