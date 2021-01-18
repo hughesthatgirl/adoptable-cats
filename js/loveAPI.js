@@ -115,14 +115,15 @@ function showError(error) {
 // Clears data
 
 function clearData() {
-    var img = document.querySelector(".pet_img");
+    var img = document.querySelector(".chosen-pet");
+    var chosenPetDiv = document.querySelector('#chosenPet');
 
     resultDiv.style.display = 'none';
     userBox.style.display = 'block';
     tagline.style.display = 'block';
     inputBox.style.display = 'block';
     img.src= "";
-    img.style.display = 'none';
+    chosenPetDiv.style.display = 'none';
     firstInput.value = '';
     lastInput.value = '';
     message.textContent = ``;
