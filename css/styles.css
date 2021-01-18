@@ -159,11 +159,11 @@ button, .photo__button {
     margin-right: auto;
 }
 
-/* DESKTOP STYLES 1000PX > */
+/* DESKTOP STYLES 800PX > */
 @media only screen and (min-width: 800px){
     .app-grid{
         grid-column-gap: 40px;
-        padding: 0 40px;
+        padding: 0 20px;
     }
 
     .photo__grid {
@@ -178,5 +178,11 @@ button, .photo__button {
     .sidebar {
         grid-column: 2/3;
         grid-row: 1/2;
+    }
+}
+
+@media only screen and (min-width: 1000px){
+    .app-grid{
+        padding: 0 40px;
     }
 }
