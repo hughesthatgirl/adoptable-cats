@@ -1,4 +1,8 @@
 /* BASE */
+html {
+    overflow-x: hidden;
+}
+
 html,body{
     height: 100%;
 }
@@ -12,23 +16,19 @@ body{
 /* HEADER/ FOOTER */
 .header,
 .footer {
-    background-color: #333;
     color: #fff;
     background: #1abc9c;
     font-family: 'Montserrat Alternates', sans-serif;
-    color: white;
     font-size: 20px;
     text-align: center;
 }
 
 .header__h1 {
-    margin: 5px;
-    padding: 5%;
+    display: inline-block;
+    padding: 20px;
+    word-wrap: break-word;
     background: black;
-    line-height: 3px;
-    height: 40px;
     font-size: 40px;
-    width: fit-content;
     border: ridge;
     margin-left: auto;
     margin-right: auto;
@@ -51,11 +51,10 @@ body{
 }
 
 /* Adding border to sidebar form */
-.petMatch{
+.petMatch, .input-box {
     border: groove;
     border-color: #1abc9c;
     padding: 5%;
-    margin: 10px;
     font-weight: bolder;
 }
 
@@ -68,9 +67,10 @@ body{
 .app-grid {
     display: grid;
     grid-template-rows: auto;
-    grid-row-gap: 20px;
+    grid-gap: 20px;
     grid-template-columns: 2fr 1fr;
     flex: 1 0 auto;
+    padding: 0 10px;
 }
 
 .app-grid,
@@ -86,9 +86,10 @@ body{
 }
 
 .photo__grid {
-    display: grid;
-    grid-gap: 20px;
-    grid-template-rows: auto; 
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
 }
 
 
@@ -111,14 +112,24 @@ button, .photo__button {
 
 /* Animal Photo Cards */
 .animal-div {
-    border: 1px solid gray;
+    border: 2px solid #000;
     border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.image-div {
+    background-color: #BAEAE1;
+    height: 200px;
+    padding: 10px 0;
     overflow: hidden;
 }
 
 .animal-img {
-    object-fit: cover;
+    object-fit: contain;
     width: 100%;
+    height: 100%;
+    object-position: center; 
 }
 
 .info-wrapper {
@@ -131,6 +142,10 @@ button, .photo__button {
 
 .email {
     line-height: 1.2;
+}
+
+.scroll-instructions {
+    display: none;
 }
 
 
@@ -148,20 +163,38 @@ button, .photo__button {
 .match__input {
     margin-left: auto;
     margin-right: auto;
+    display: block;
+    width: 100%;
 }
 
-/* DESKTOP STYLES 1000PX > */
-@media only screen and (min-width: 1000px){
+/* MOBILE ONLY STYLES < 600PX > */
+@media only screen and (max-width: 600px){
+    .animal-div {
+        scroll-snap-align: start;
+        flex-shrink: 0;
+        margin-right: 20px;
+        display: flex;
+        justify-content: start;
+        flex-direction: column;
+    }
+
+    .scroll-instructions {
+        display: block;
+    }
+}
+
+/* DESKTOP STYLES 800PX > */
+@media only screen and (min-width: 601px){
     .app-grid{
         grid-column-gap: 40px;
+        padding: 0 20px;
     }
 
     .photo__grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .photo__grid:nth-last-child(1):nth-child(3n+1){
-        grid-column: 1/4;
+        display: grid;
+        grid-gap: 20px;
+        grid-template-rows: auto; 
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 
     .main {
@@ -169,8 +202,14 @@ button, .photo__button {
         grid-row: 1/2;
     }
     
-    .petMatch {
+    .sidebar {
         grid-column: 2/3;
         grid-row: 1/2;
+    }
+}
+
+@media only screen and (min-width: 1000px){
+    .app-grid{
+        padding: 0 40px;
     }
 }

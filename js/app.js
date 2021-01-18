@@ -104,10 +104,15 @@ $('#showCriteria').on('click', function(){
 
 var pets = document.querySelectorAll('.animal-img');
 var petName = document.querySelector('#petName');
-var img = document.querySelector(".pet_img");
+var chosenPetDiv = document.querySelector('#chosenPet');
+var img = document.querySelector(".chosen-pet");
+
+chosenPetDiv.style.display = 'none';
+
 document.addEventListener('click', function (event) {
     if ( event.target.classList.contains( 'animal-img' )) {
           petName.value = event.target.getAttribute('data-petname');
+          chosenPetDiv.style.display = 'block';
           img.src = event.target.getAttribute("src");
     }
 }, false);

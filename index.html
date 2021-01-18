@@ -16,24 +16,27 @@
 		</header>
 		<div class="app-grid">
 			<main class="main py-10 px-5">
-				<section class="photo__section">
-					<div id="photoGrid" class="photo__grid text-center text-2xl">
+				<section class="photo__section text-center">
+					<button id="showCriteria" type="button" class="photo__button">Show Cats</button>
+					<p class="scroll-instructions mt-6">Swipe to scroll through the photos.</p>
+					<div id="photoGrid" class="photo__grid text-2xl mt-6">
 						<!-- img tag appended via js here-->
 					</div>
-					<button id="showCriteria" type="button" class="photo__button mt-6">Show Cats</button>
 				</section>
 			</main>
-			<aside class="sidebar petMatch text-center py-10 px-5">
+			<aside class="sidebar petMatch text-center mt-6 py-10 px-5">
 				<div id="matchScreen" class="user">
 					<h2 class="headline text-xl">Are you a match?</h2>
-					<img src="" alt="Chosen Cat" class="pet_img">
-					<p class="tagline mt-6">Want to know how much your cat will love you?</p>
+					<div id="chosenPet" class="mt-6 image-div">
+						<img src="" alt="Chosen Cat" class="chosen-pet animal-img">
+					</div>
+					<p class="tagline mt-6">Want to know how much your cat will love you? <br> Click on a cat photo to see if you are a match!</p>
 				</div>
-				<div id="petMatch" class="input-box petMatch">
+				<div id="petMatch" class="input-box mt-6">
 					<label for="humanName" class="block mt-6">Enter your name</label>
 					<input id="humanName" class="match__input input input-1 block mt-6 border-2 border-gray-400 border-solid" type="text" name="humanName" value="">
 					
-					<label for="petName" class="block mt-6">Enter your cat's name</label>
+					<label for="petName" class="block mt-6">Cat's Name (Click photo to add!)</label>
 					<input id="petName" class="match__input input input-2 block mt-6 border-2 border-gray-400 border-solid" type="text" name="petName" value="">
 
 					<button type="button" class="submitBtn mt-6">Get Your Result</button>

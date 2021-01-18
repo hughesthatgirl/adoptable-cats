@@ -91,6 +91,7 @@ function dataUI(result) {
     }
     // creating a reset button
 let resetButton = $("<button>")
+resetButton.addClass("mt-6")
 resetButton.attr("id","resetBtn")
 resetButton.text("RESET")
 
@@ -113,11 +114,17 @@ function showError(error) {
 }
 
 // Clears data
+
 function clearData() {
+    var img = document.querySelector(".chosen-pet");
+    var chosenPetDiv = document.querySelector('#chosenPet');
+
     resultDiv.style.display = 'none';
     userBox.style.display = 'block';
     tagline.style.display = 'block';
     inputBox.style.display = 'block';
+    img.src= "";
+    chosenPetDiv.style.display = 'none';
     firstInput.value = '';
     lastInput.value = '';
     message.textContent = ``;
