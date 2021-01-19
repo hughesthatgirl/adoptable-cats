@@ -17,14 +17,16 @@ const message = document.querySelector('.message-1');       // message heading
 const formalMessage = document.querySelector('.message');   // message body
 const userName = document.querySelector('.messageBody');
 
+//Function to render local storage into name input box.
 function onReturn() {
     let ls = localStorage.getItem('userName');
     if(ls !== null) {
         $('.input-1').val(ls);
     } else {
-        $('.input-1').val('input name');
+        $('.input-1').val('');
     }
 } onReturn();
+
 // Add event listener to the button for click and/or enter key
 submitButton.addEventListener('click', fromUI);
 
@@ -104,7 +106,10 @@ resetButton.text("RESET")
 
 $(".message").append(resetButton)
 
-$("#resetBtn").on("click", clearData)
+$("#resetBtn").on("click", function (){
+    clearData();
+    onReturn();
+})
     
 }
 
